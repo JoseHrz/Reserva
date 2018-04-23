@@ -1,0 +1,134 @@
+.banner-h{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-bottom: solid 1px #eee;
+
+  &__cab{
+    background:#fff;
+    color:$grey-d2;
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-bottom: solid 1px $grey-l2;
+    h2{
+      color:$color-second;
+      margin:0;
+      font-size: pxtoem(20px,16px);
+      line-height: pxtoem(35px,16px);
+      font-weight: 300;
+    }
+
+  }
+
+
+  &__body{
+    background: #fff;
+    padding:0px 20px 20px 20px;
+    p{
+      display: none;
+      margin-top:0px;
+      @include mq($laptop){
+        display: block;
+      };
+    }
+  }
+
+  img{
+    @include prefixed(transition,.8s);
+    @include prefixed(transform,scale(1.1));
+  }
+  &__entry{
+      width: 100%;
+      height: 100%;
+      background:rgba(255, 255, 255,0.4);
+      position: absolute;
+      z-index: 2;
+      margin-top: 100%;
+      @include prefixed(transition,.8s);
+
+
+    p{
+      opacity: 0;
+      color:#fff;
+      position: absolute;
+      @include prefixed(transition,.5s);
+      bottom:0;
+      left: 40%;
+      i{
+          margin: 0 20px;
+      }
+    }
+  }
+
+  &:hover{
+    img{
+      @include prefixed(transform,scale(1.4));
+    }
+  }
+
+  &:hover &__entry{
+    margin-top: 0;
+    background:rgba(255, 255, 255, 0.6);
+    p{
+      bottom:80px;
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.banner-container{
+  .btn-icon-circle--main{
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    z-index: 9;
+    color: #fff!important;
+    &:hover{
+      background: $color-main;
+    }
+  }
+
+
+  .btn-icon-circle--second{
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    background: $color-second;
+    z-index: 9;
+    &:hover{
+      background: $color-second;
+    }
+  }
+
+
+
+  .btn-icon-circle--third{
+    width: pxtoem(40px,16px);
+    height: pxtoem(40px,16px);
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    background: $grey;
+    z-index: 9;
+    &:hover{
+      background: $grey;
+    }
+  }
+
+  &.main{
+    border-bottom: solid 5px $color-main;
+  }
+  &.second{
+    border-bottom: solid 5px $color-second;
+  }
+  &.third{
+    border-bottom: solid 5px $grey;
+  }
+}

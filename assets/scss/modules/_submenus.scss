@@ -1,0 +1,195 @@
+// MIXINS & PLACEHOLDERS:
+//================================
+
+//Flex-box styles for the menu
+%center-nav{
+  display: flex;
+  align-items: center;
+  @extend  %flex-display;
+  @extend  %flex-align-items;
+}
+
+//Styles for the submenu
+@mixin dropdown($drp-w,$drp-h,$left-post) {
+  width: $drp-w;
+  height: $drp-h;
+  box-shadow: $soft-shadow;
+  opacity:0;
+  top:111%;
+  left:$left-post;
+  background:#fff;
+  position: absolute;
+  z-index: 6;
+  visibility: hidden;
+  @include prefixed(transition,.3s);
+
+
+  &__item{
+    color:$color-third;
+    box-sizing: border-box;
+    height: auto;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      top: 41px;
+      left:0px;
+      display: block;
+      height: 1px;
+      background:$grey-l1;
+    }
+  }
+  & &__item:last-child{
+    &:after{
+      content: '';
+      width: 0px;
+      height: 0px;
+    }
+  }
+
+  &__link{
+    height: 100%;
+    padding:10px 20px;
+    display: block;
+    letter-spacing: 2px;
+    color:$grey-d1;
+    font-weight: bolder;
+    @include prefixed(transition,.5s);
+    transition:.3s;
+    @include mq($laptop){
+      font-size:pxtoem(10px,16px);
+      text-transform: uppercase;
+    };
+    &:hover {
+      background: $grey-l2;
+      color: $color-main;
+    }
+  }
+
+  &-trigg:hover &{
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+}
+
+
+
+
+
+// INCLUDES:
+//================================
+.submenu-trigg{
+  position: relative;
+  z-index: 9;
+  &:after{
+    font-family: 'FontAwesome';
+    content: '';
+    font-size: 10px;
+    color: lightgrey;
+    position: relative;
+    top: 0px;
+    right: 70px;
+    display: block;
+    z-index: 9;
+  }
+}
+
+.submenu--nv2-trigg{
+  position: relative;
+  z-index: 9;
+}
+
+
+
+.submenu{
+  @include dropdown(155%,auto,0px);
+}
+
+.submenu--nv2{
+  @include dropdown(120%,auto,274px);
+}
+
+.megamenu{
+  @include dropdown(175%,auto,0px);
+}
+
+
+
+
+
+// MEGAMENU:
+//================================
+
+
+.megamenu-ref{
+  position: relative;
+}
+
+.megamenu-trigg{
+
+  .megamenu {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 30px;
+    background:#fff;
+    position: absolute;
+    left:0px;
+    z-index: 6;
+    opacity: 0;
+    visibility: hidden;
+    @include prefixed(transition,.3s);
+
+
+    &__section{
+      padding: 0px!important;
+      h4{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        a{
+          color: $color-second;
+          &:hover{
+            color: $color-main;
+          }
+        }
+      }
+      .megamenu__item{
+        &:after{
+          height:0px!important;
+        }
+      }
+      .megamenu__link{
+        padding-left: 0px;
+        &:hover{
+          background: #fff!important;
+          color: $color-main;
+        }
+      }
+    }
+
+    &:before{
+      left: 46%!important;
+    }
+
+
+      &:after{
+        left: 46.1%!important;
+      }
+  }
+
+
+
+
+  &:hover{
+    .megamenu{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

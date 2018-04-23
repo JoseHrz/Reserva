@@ -1,0 +1,329 @@
+//1.MAIN-SIZE
+//===============================================
+html{
+  font-family: $font-corp;
+  font-size: 15px;
+  line-height: 20px;
+  @include mq($tablet){
+    font-size:15.5px;
+    line-height: 20.5px;
+  };
+  @include mq($laptop){
+    font-size: 16px;
+    line-height: 21px;
+  };
+}
+//2.HEADERS
+//===============================================
+//Font-size
+@each $header in $headers{
+  $h:nth($header,1);
+  $fs:nth($header,2);
+  $lh:nth($header,3);
+  #{$h}{
+    font-size:pxtoem($fs,16px);
+    line-height:pxtoem($lh,16px);
+  }
+}
+
+h1{
+  color:$grey-d2;
+  margin-top: 0px;
+}
+
+
+ h2{
+   letter-spacing: 1px;
+   line-height: 32px;
+   font-weight: 300;
+   margin-top: 25px;
+
+   &.subtitle{
+     font-size: 18px;
+   }
+ }
+
+
+
+ h3{
+   letter-spacing:1px;
+   color:$color-main;
+   line-height:32px;
+   font-weight:300;
+   font-family:$font-corp;
+   margin-top:25px;
+   &.subtitle02{
+     font-size: 29px!important;
+   }
+ }
+//3.PARAGRAPHS/LINKS/LISTS...
+//===============================================
+
+p{
+  font-size: pxtoem($p-fs, 16px);
+  line-height: pxtoem($p-lh, 16px);
+  color: $text-color;
+  font-weight: 300;
+}
+
+.destacado{
+  color:$color-main;
+  font-weight: 400;
+}
+
+
+
+
+a {
+  color: $color-main;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+//hr styles
+
+$hr-widths:(
+  corto:10%,
+  medio:50%,
+  largo:100%
+);
+
+
+$hr-heights:(
+  fino:1px,
+  normal:2px,
+  grueso:4px
+);
+
+
+.hr{
+  @each $hr-width,$hr-px in $hr-widths{
+    &-#{$hr-width}{
+      width:$hr-px;
+    }
+  }
+    @each $hr-height,$hr-px in $hr-heights{
+      &-#{$hr-height}{
+        height:$hr-px;
+      }
+  }
+}
+
+//4. FOOTER
+//===============================================
+
+footer{
+  background: $grey-d2;
+  background-image: imgpath('comun','simbol-footer.png');
+  background-repeat: no-repeat;
+  background-position:121% center;
+  h5{
+    color: #fff;
+    font-family: $font-corp;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    
+    font-weight: 400;
+    margin-bottom: 0px;
+  }
+  p{
+    color: #fff!important;
+    a{
+    color: #fff!important;
+    }
+  }
+  ul{
+    margin-left: 21px!important;
+    li{
+      color: #fff;
+      line-height: 30px;
+      i{
+        line-height: 27px!important;
+        color:#fff;
+      }
+    }
+  }
+}
+
+
+.footer02{
+  background:darken($grey-d2, 14%);
+  font-family: $font-corp;
+  letter-spacing: 1px;
+  p{
+    color: #fff;
+  }
+
+  a{
+    color: #fff;
+  }
+  span{
+    margin:0px 10px;
+  }
+
+  i{
+    font-size: 23px!important;
+    margin-left: 10px!important;
+    color: #fff;
+  }
+
+}
+
+
+//5. CORPORATIVE ELEMENTS
+//===============================================
+
+//Corporate elements - Center cabs
+
+%center-cab{
+  // display: block;
+  // width:460px;
+  text-align: center;
+  font-size: pxtoem(28px,16px);
+  line-height: pxtoem(21px,16px);
+  font-family: $font-corp;
+  letter-spacing: 2px;
+  font-weight: 200;
+  position: relative;
+  color:$text-color;
+  margin:auto;
+  padding-bottom: 25px;
+  &:before{
+    content: '';
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 4px;
+    background:$color-main;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}
+
+
+.enc-corp{
+  font-family: $font-corp;
+  color: $color-second;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: relative;
+  margin-bottom: 32px;
+  font-size: pxtoem(30px,16px)!important;
+  strong{
+    font-weight: 600;
+    color: $color-main;
+  }
+  // &:after{
+  //   content: '';
+  //   background-image: imgpath('comun','hr-corp.png');
+  //   position: absolute;
+  //   left: 90%;
+  //   width: 403px;
+  //   height: 15px;
+  // }
+}
+
+
+
+h2.enc-corp{
+  font-size: 28px;
+  margin-top: 2px;
+}
+
+
+
+
+.section-marked{//Junto con enc-corp
+  &:before{
+    content: '';
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 35px;
+    background:$color-main;
+    position: absolute;
+    left: 0px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+.enc-corp-second{
+  font-family: $font-corp;
+  font-size: 20px;
+  font-weight: 500;
+  color: $grey;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 40px;
+  &:after{
+    content: '';
+    display: block;
+    background: $color-main;
+    height: 3px;
+    position: relative;
+    bottom: -14px;
+    width: 40px;
+  }
+}
+
+
+
+
+.enc-corp-center{
+  font-family: $font-corp;
+  text-align: center;
+  color: $color-second;
+  font-weight: 400;
+  letter-spacing: 1px;
+  strong{
+    font-weight: 600;
+    color: $color-main;
+  }
+  // &:before{
+  //   content: '';
+  //   background-repeat: no-repeat;
+  //   margin: auto;
+  //   width: 50px;
+  //   height: 3px;
+  //   background:$color-main;
+  //   display: block;
+  //   margin-bottom: 10px;
+  // }
+}
+
+.subtit{
+  color:$color-second;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+
+
+.img-dec{
+  &:before{
+    content: '';
+    display: block;
+    height:3px;
+    width: 20%;
+    position: relative;
+    top: -5px;
+    background: $color-main;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 15px;
+    height:3px;
+    width: 20%;
+    background: $color-second;
+  }
+}

@@ -1,0 +1,26 @@
+.noti{
+  position: relative;
+
+  .link{
+    font-weight: 500;
+  }
+  &__foto{
+    position: absolute;
+  }
+  &__fecha{
+    display: block;
+    width:43px;
+    height: 48px;
+    background:lighten($color-main, 13%);
+    color:#fff;
+    font-size:11px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-align: center;
+    left: 0px;
+    top:0px;
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+  }
+}

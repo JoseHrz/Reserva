@@ -1,0 +1,50 @@
+.bg-simbol{
+  background-image: imgpath('empresa','bg-simbol.png');
+  background-size: 624px;
+  @include bg-img(auto, -346px -58px);
+}
+
+.empresa-prlx {
+  background-image: imgpath('empresa','bg-datos.jpg');
+  @include bg-img(500px, right);
+  h5{
+    color: $color-second;
+    letter-spacing: 2px;
+    font-weight:500;
+    font-size: 26px;
+    strong{
+      color: $color-main;
+      font-weight:500;
+    }
+  }
+  .col{
+    padding-left:0px;
+  }
+  h2{
+    font-size:47px!important;
+    margin-bottom:0px;
+    margin-top: 0px;
+    text-align: center;
+    i{
+      font-size:39px;
+      margin-bottom:20px;
+      margin-left:15px;
+      color: $color-main;
+    }
+    span{
+      font-size:15px; margin-right:5px;
+      &#contador01,&#contador02,&#contador03{
+        font-size: 43px;
+        color: lighten($color-main, 7%);
+      }
+    }
+  }
+  p{
+    line-height:20px;
+    text-align: center;
+    letter-spacing:2px;
+    font-size:14px;
+    color:darken($color-third,15%);
+    font-weight:600;
+  }
+}

@@ -1,0 +1,193 @@
+// Btn-base
+%button-base{
+  @extend %flex-display;
+  @extend %flex-align-items;
+  @extend %flex-just-c;
+  font-family: $font-second;
+  padding: 10px;
+  font-size: pxtoem(16px, 16px);
+  line-height: pxtoem(53px, 16px);
+  letter-spacing: 0.5px;
+  color:#fff;
+  @include prefixed(transition, 0.2s);
+
+
+  @include mq($tablet){
+    font-size: pxtoem(14px, 16px);
+  };
+  &.center-block{
+    @extend %flex-display;
+    @extend %flex-align-items;
+    @extend %flex-just-c;
+    display: flex!important;
+    margin: auto!important;
+  }
+  &.round{
+    border-radius: 35px;
+  }
+  &.large{
+    width: 70%;
+    padding: 28px;
+    text-transform: uppercase;
+  }
+  &.med{
+    width: 50%;
+    padding: 18px!important;
+  }
+}
+
+
+
+// Btn-variantes
+
+.btn-text--main{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  background: $color-main;
+  color:#fff;
+  &:hover{
+    background: lighten($color-main, 15%);
+  }
+}
+
+
+.btn-text--main--border{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  background:transparent;
+  color: $color-main;
+  border: solid $color-main 2px;
+  &:hover{
+    background: $color-main;
+    color: #fff;
+    border-color: $color-main;
+  }
+}
+
+
+.btn-text--second--border{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  background:transparent;
+  color: $color-main;
+  border: solid $color-main 2px;
+  &:hover{
+    background: $color-main;
+    color: #fff;
+    border-color: $color-main;
+  }
+}
+
+
+.btn-text--second{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  background: $color-second;
+
+  &:hover{
+    background: lighten($color-second, 15%);
+  }
+}
+
+
+.btn-text--white{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  background: #fff;
+  color:$color-second;
+}
+
+
+.btn-text--white--border{
+  @extend %button-base;
+  width: pxtoem(180px,16px);
+  height: pxtoem(40px,16px);
+  border: solid 2px #fff;
+  color:#fff;
+  &:hover{
+    background: #fff;
+    color:$color-second;
+  }
+}
+
+
+
+.btn-icon--main{
+  width: pxtoem(80px,16px);
+  height: pxtoem(80px,16px);
+  background: $color-main;
+}
+.btn-icon--second{
+  width: pxtoem(80px,16px);
+  height: pxtoem(80px,16px);
+  background: $color-second;
+}
+
+
+.btn-icon-circle--main{
+  @extend %button-base;
+  width: pxtoem(20px,16px);
+  height: pxtoem(20px,16px);
+  background: $color-main;
+}
+
+
+.btn-icon-circle--second{
+  @extend %button-base;
+  width: pxtoem(40px,16px);
+  height: pxtoem(40px,16px);
+  background: $color-second;
+}
+
+
+
+.btn-icon-circle--greyd{
+  @extend %button-base;
+  width: pxtoem(40px,16px);
+  height: pxtoem(40px,16px);
+  background: $grey-d2;
+}
+
+
+
+
+
+
+
+
+// Btn-sections
+
+
+
+
+
+.link{
+  display: block;
+  max-width: 250px;
+  text-transform: uppercase;
+  color: $color-main;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+  @include prefixed(transition, 0.2s);
+  i{
+    color:#ccc;
+    position: relative;
+    margin-right: 30px;
+    line-height: 26px;
+    font-size: 13px;
+    @include prefixed(transition, 0.2s);
+  }
+
+  &:hover{
+    i{
+      transform: translateX(20px);
+    }
+  }
+}

@@ -1,0 +1,139 @@
+/* Style the tab */
+div.tab {
+    float: left;
+		width: 90%;
+    box-shadow: $soft-shadow;
+    border: solid 1px #eee;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    display: block;
+    color: black;
+    margin:0px!important;
+    padding: 15px 20px 15px 20px;
+    width: 100%;
+		border-bottom: solid 1px #eee;
+		letter-spacing: 1px;
+		font-family: $font-corp;
+		font-size: 11px;
+    line-height: 22px!important;
+		outline: none;
+    text-transform: uppercase;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+
+		// &:first-child{
+		// 	border-bottom:0px;
+		// 	border-top:0px;
+		// }
+		// &:last-child{
+		// 	border-top:0px;
+		// }
+}
+
+.tab-cab{
+	display: block;
+	box-sizing: border-box;
+	padding: 18px 20px 18px 30px;
+	font-size: 17px;
+	letter-spacing: 2px;
+	background: $color-main;
+	color: #fff;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: darken(#f1f1f1,5%);
+}
+
+/* Create an active/current "tab button" class */
+div.tab button.active {
+		color:darken($color-main,10%);
+    font-weight: 500;
+		position: relative;
+    border-left: solid 5px $color-main;
+    background: #f4f4f4;
+}
+
+.tablinks{
+  margin:0px;
+  &.active{
+  	.triangle{
+  		position: absolute;
+  		width: 0;
+  		height: 0;
+  		right: -15px;
+  		bottom: 1px;
+  		border-style: solid;
+  		border-width: 30px 0 25px 15px;
+  		border-color: transparent transparent transparent #093E77;
+  	}
+  }
+}
+
+
+
+/* Style the tab content */
+.tabcontent {
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    border-left: none;
+    height: 300px;
+}
+
+
+
+
+//--------------------------------
+
+//Content Nav
+
+.content-nav{
+  $t-content-shadow:4px -1px 10px -3px rgba(0,0,0,0.14);
+  padding: 40px 0px 8px 0px;
+  .col{
+    border-bottom: solid #eee 1px;
+    @include prefixed(transition, 0.2s);
+    a{
+      @include prefixed(transition, 0.2s);
+      box-sizing: border-box;
+      padding: 20px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin: 0px;
+      color: $grey;
+      display: block;
+      text-align: center;
+      span{
+        text-align: center;
+        display: block;
+        font-size: 16px;
+      }
+    }
+
+    &:hover{
+      border-bottom-color:lighten($color-main, 17%);
+      a{
+        color:lighten($color-main, 17%);
+      }
+    }
+
+    &.active{
+      border-top: solid #ddd 1px;
+      border-bottom: solid #ddd 1px;
+      border-left: solid #ddd 1px;
+      border-right: solid #ddd 1px;
+      height: 62px;
+      border-bottom-color: #fff;
+      border-top-color:lighten($color-main, 20%);
+      border-top-width:3px;
+      a{
+        color:$grey;
+      }
+    }
+  }
+}

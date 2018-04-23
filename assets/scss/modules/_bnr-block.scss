@@ -1,0 +1,701 @@
+//1. BANNER HORIZONTAL FULLWIDTH
+// ================================================
+
+//Mixin
+@mixin bnr-elesa01-img($bnr01-img, $bnr01-folder, $bnr-size:760px){
+  @include prefixed(transition,0.2s);
+  transition: 0.2s;
+  line-height:0px;
+  overflow: hidden;
+  width: 100%;
+  min-height:310px ;
+  background-image: imgpath($bnr01-folder, $bnr01-img);
+  background-repeat: no-repeat;
+  background-size: $bnr-size;
+  .btn-icon--second{
+    @extend %button-base;
+    width: pxtoem(40px,16px);
+    height: pxtoem(40px,16px);
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    color: #fff;
+    font-weight: bold;
+    @include prefixed(transition, 0.2s);
+    &:hover{
+      box-shadow:$soft-shadow;
+      background: lighten($color-second,10%);
+    }
+  }
+  &:hover{
+    background-size:($bnr-size + 30px);
+  }
+}
+
+@mixin bnr-elesa01-info($bnr01-bg){
+  @include prefixed(transition,0.2s);
+  transition: 0.2s;
+  box-sizing: border-box;
+  background:$bnr01-bg;
+  min-height:310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2{
+    font-size: 21px;
+    line-height: 30px;
+    color: #fff;
+    margin: 0;
+    font-weight: 200;
+  }
+
+  .triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 10px;
+    border-color: transparent transparent transparent $bnr01-bg;
+    position: absolute;
+    top: 48%;
+    right: -10px;
+    z-index: 1;
+  }
+
+  .bnr-content{
+    height: 80%;
+    width: 100%;
+    .btn-text--white{
+      @extend %button-base;
+      width: pxtoem(180px,16px);
+      height: pxtoem(40px,16px);
+      background: transparent;
+      border: solid 1px #fff;
+      border-radius: 20px;
+      margin-top: 30px;
+      @include prefixed(transition, 0.2s);
+      &:hover{
+        background: #fff;
+        color:$grey-d2;
+      }
+    }
+  }
+
+}
+
+
+//includes
+.bnr-transformadores--img{
+  @include bnr-elesa01-img('transform-banner.jpg','home');
+  background-position: -99px -30px;
+}
+.bnr-transformadores--info{
+  @include bnr-elesa01-info($color-main);
+}
+
+
+
+
+.bnr-nucleos--img{
+  @include bnr-elesa01-img('nucleos-banner.jpg','home', 594px);
+  background-position: -37px -75px;
+}
+.bnr-nucleos--info{
+  @include bnr-elesa01-info($grey);
+}
+
+
+
+//2. BANNER HORIZONTAL
+// ================================================
+
+
+.banner-h{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-bottom: solid 1px #eee;
+
+  &__cab{
+    background:#fff;
+    color:$grey-d2;
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-bottom: solid 1px $grey-l2;
+    h2{
+      text-align: center;
+      color:$color-second;
+      margin:0;
+      font-size: pxtoem(20px,16px);
+      line-height: pxtoem(35px,16px);
+      font-weight: 300;
+    }
+
+  }
+
+
+  &__body{
+    background: #fff;
+    padding:0px 20px 50px 20px;
+    p{
+      text-align: center;
+      display: none;
+      @include mq($laptop){
+        display: block;
+      };
+    }
+    .btn-icon-circle--main{
+      margin:auto;
+      border-radius: 50%;
+      @include prefixed(transition,.2s);
+      &:hover{
+        background:$color-second;
+      }
+    }
+  }
+
+  img{
+    @include prefixed(transition,.8s);
+    @include prefixed(transform,scale(1.1));
+  }
+  &__entry{
+      width: 100%;
+      height: 100%;
+      background:rgba(255, 255, 255,0.4);
+      position: absolute;
+      z-index: 2;
+      margin-top: 100%;
+      @include prefixed(transition,.8s);
+
+
+    p{
+      opacity: 0;
+      color:#fff;
+      position: absolute;
+      @include prefixed(transition,.5s);
+      bottom:0;
+      left: 40%;
+      i{
+          margin: 0 20px;
+      }
+    }
+  }
+
+  &:hover{
+    img{
+      @include prefixed(transform,scale(1.4));
+    }
+  }
+
+  &:hover &__entry{
+    margin-top: 0;
+    background:rgba(95, 152, 218,0.7);
+    p{
+      bottom:34px;
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.banner-container{
+  .btn-icon-circle--main{
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    z-index: 9;
+    &:hover{
+      background: $color-main;
+    }
+  }
+
+
+  .btn-icon-circle--second{
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    background: $color-second;
+    z-index: 9;
+    &:hover{
+      background: $color-second;
+    }
+  }
+
+
+
+  .btn-icon-circle--greyd{
+    right:15px;
+    margin-top:-41px;
+    @include prefixed(transition,0.2s);
+    position: absolute;
+    background: $grey-d2;
+    z-index: 9;
+    &:hover{
+      background: $grey-d2;
+    }
+  }
+}
+
+
+
+//  3. SECCIÓN PRODUCTOS BANNERS
+// =================================
+
+
+
+.bnr-empresa01--info{
+  box-shadow: $blur-shadow;
+  padding: 50px;
+  @include bnr-elesa01-info($color-main);
+
+  h2{
+    color:$grey-d2;
+    font-weight: 400;
+    font-size: 15px;
+    &:after{
+      content:'';
+      position: absolute;
+      height:1px;
+      top:100px;
+      right:15px;
+      background:lighten($color-second,5%);
+      width:79%;
+      display:none;
+      @include mq($laptop){
+        display:block;
+      };
+    }
+    @include mq($tablet){
+      font-size: 19px;
+    };
+  }
+  p{font-size:15px;}
+
+
+
+  .btn-icon-circle--main{
+    background: lighten($color-second,5%);
+  }
+}
+
+
+
+.bnr-empresa02--info{
+  box-shadow: $blur-shadow;
+  background-position: left -50px;
+  @include bnr-elesa01-info(#fff);
+  padding: 50px;
+  h2{
+    color:$color-second;
+    font-weight: 400;
+    font-size: 15px;
+    &:after{
+      content:'';
+      position:absolute;
+      height:1px;
+      right: 15px;
+      top:100px;
+      background:#ccc;
+      width:79%;
+      display:none;
+      @include mq($laptop){
+        display:block;
+      };
+    }
+    @include mq($tablet){
+      font-size: 19px;
+    };
+  }
+  p{font-size:15px;}
+
+}
+
+
+
+.bnr-empresa03--info{
+  box-shadow: $blur-shadow;
+  padding: 50px;
+  @include bnr-elesa01-info($grey-l1);
+
+  h2{
+    color:$grey-d2;
+    font-weight: 400;
+    font-size: 19px;
+  }
+
+  .btn-icon-circle--main{
+    background: lighten($color-second,5%);
+  }
+}
+
+
+
+.bnr-prdoductos03--img{
+  @include bnr-elesa01-img('idi.jpg','empresa',653px);
+  background-position: -109px -70px;
+}
+
+
+
+
+.bnr-prdoductos04--img{
+  @include bnr-elesa01-img('calidad.jpg','empresa');
+  background-position: -99px -141px;
+}
+.bnr-empresa04--info{
+  @include bnr-elesa01-info($color-second);
+  padding: 50px;
+  h2{
+    color:$grey-d2;
+    font-weight: 400;
+    font-size: 19px;
+  }
+  .btn-icon-circle--main{
+    margin-top: 20px;
+    margin:auto;
+    background: lighten($color-main,10%);
+  }
+}
+
+
+
+
+
+//3. BANNER INFOGRAFÍA
+// ================================================
+
+@mixin bannerInfo($f-size, $l-height, $number-width,$number-height) {
+  border-top: solid 3px $color-main;
+  border-bottom: solid 3px $color-main;
+  box-shadow: $blur-shadow;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 13px;
+  min-height: 298px;
+
+  h3{
+    font-style: italic;
+    margin-top: -25px;
+    line-height:$l-height;
+    font-size: $f-size;
+    color: $grey-d1;
+    b{
+      font-weight: 600!important;
+    }
+    i{
+      color: $color-second;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+    hr{
+      margin-bottom: 15px;
+    }
+  }
+
+  &-block{
+    @extend %cnt-x-sp-bt;
+    margin-top: 30px;
+    &__item{
+      @extend %cnt-x-cnt;
+      width: 28%;
+      background: $color-main;
+      box-sizing: border-box;
+      padding: 4px;
+      color:$grey-d2;
+      font-size: 9px;
+      border-radius: 10px;
+      justify-content: center;
+      margin: 0px 5px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+  }
+
+
+  &__number{
+    @extend %cnt-x-cnt;
+    background: #fff;
+    margin:auto;
+    width: $number-width;
+    justify-content: center;
+    font-size: 18px;
+    height: $number-height;
+    border: solid 2px $color-main;
+    color: $color-second;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    top:-40px;
+  }
+}
+
+
+
+
+//4. BANNER DIVISIONES -- divisiones.php
+// ================================================
+
+@mixin bnrDivision($color) {
+  @include prefixed(transition, 0.4s);
+  overflow: hidden;
+  cursor: pointer;
+  .bnr-overlay{
+    @include prefixed(transition, 0.4s);
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: $color;
+    opacity: 0.5;
+  }
+  img{
+    @include prefixed(transition, 0.4s);
+    opacity: 0.8;
+  }
+  .caption{
+    position: absolute;
+    z-index: 10;
+    top: 35%;
+    width: 100%;
+    h2{
+      @include prefixed(transition, 0.4s);
+      color: #fff;
+      font-size: 17px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 200;
+      strong{
+        font-weight: 600;
+      }
+    }
+    h5{
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      font-weight: 200;
+      position: relative;
+      @include prefixed(transition, 0.4s);
+      @include prefixed(transform, translateY(20px));
+      transform: translateY(20px);
+      opacity: 0;
+      // &:before{
+      //   content: '';
+      //   display: block;
+      //   margin:auto;
+      //   width: 30px;
+      //   height: 2px;
+      //   position: relative;
+      //   top:-10px;
+      //   background: #fff;
+      // }
+    }
+  }
+  &:hover{
+    .bnr-overlay{
+      opacity: 0;
+    }
+    .responsive-img{
+      opacity: 1;
+      @include prefixed(transform, scale(1.2));
+      transform: scale(1.2);
+    }
+    h2{
+      opacity: 0;
+      @include prefixed(transform, translateY(-20px));
+      transform: translateY(-20px);
+    }
+    h5{
+      opacity: 1;
+      @include prefixed(transform, translateY(-20px));
+      transform: translateY(-20px);
+    }
+  }
+}
+
+
+.bnr-div-red{
+  @include bnrDivision($color-main);
+  .bnr-overlay{
+    opacity: 0.6;
+  }
+}
+.bnr-div-black{
+  @include bnrDivision($grey-d2);
+  .bnr-overlay{
+    opacity: 0.6;
+  }
+}
+.bnr-div-grey{
+  @include bnrDivision($grey);
+}
+
+
+.bnr-div-byn{
+  @include bnrDivision(transparent);
+  img{
+    // @include prefixed(filter,blur(0px));
+    // filter: blur(0px);
+    opacity: 1;
+  }
+  &:hover{
+    img{
+      // @include prefixed(filter,blur(10px));
+      // filter: blur(10px);
+      opacity: 0.2!important;
+    }
+  }
+}
+
+
+.act-cab{
+  padding-top: 87px;
+  color: $color-third;
+  font-weight: 100;
+
+  // &:before{
+  //   background: $color-main;
+  //   height: 2px;
+  //   width: 60%;
+  //   content: '';
+  //   display: block;
+  //   margin: auto;
+  //   position: relative;
+  //   top:-50px;
+  // }
+}
+
+.act-text{
+  padding: 0px 20px;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+
+.bnr-tit{
+  box-sizing: border-box;
+  padding: 20px 0px;
+  &.red{
+    background:$color-second;
+  }
+  &.black{
+    background:$color-third;
+  }
+  h4{
+    color: #fff;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//4. BANNER DIVISIONES -- grupo.php
+// ================================================
+.servicios-banner{
+  $serv-colors: (
+    01:darken($color-main,10%),
+    02:$color-main,
+    03:lighten($color-main,7%),
+    04:lighten($color-main,15%)
+  );
+  $serv-shadow:-1px 6px 34px 0px rgba(0,0,0,0.46);
+
+  display: flex;
+  margin-top:0px;
+  position: relative;
+  z-index: 9;
+  overflow: visible;
+  flex-wrap:wrap;
+  @each $serv-num, $serv-color in $serv-colors{
+    &__item0#{$serv-num}{
+      width:100%;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 9;
+      background:$serv-color;
+      @include prefixed(transition, 0.4s);
+
+      h4{
+        color:$grey-d2;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 0px;
+        float: left;
+        margin-left: 30px;
+        @include mq($mobile){
+          float: none;
+          margin-left: 0px;
+        };
+        @include mq($laptop){
+          font-size: 19px;
+          line-height: 26px;
+        };
+      }
+      p{
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 22px;
+      }
+
+      img{
+        width: 25px;
+        float: left;
+        @include mq($mobile){
+          width: 40px;
+          float: none;
+        };
+      }
+
+
+      a{
+        p{
+          display: none;
+          @include mq($tablet){
+            display: block;
+          };
+        }
+      }
+
+
+      &:hover{
+        box-shadow: $serv-shadow;
+        @include prefixed(box-shadow,$serv-shadow);
+        z-index: 10;
+      }
+
+
+      @include mq($mobile){
+        width:33.333333%;
+      };
+
+    }
+  }
+
+  @include mq($tablet){
+    display: flex;
+  };
+
+
+  &.container{
+    width: 100%;
+  }
+
+}

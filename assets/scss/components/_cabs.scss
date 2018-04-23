@@ -1,0 +1,86 @@
+$cabs:
+empresa,
+actividad,
+;
+
+
+@each $cab in $cabs{
+  .cab-#{$cab}{
+    background-image: imgpath('#{$cab}','#{$cab}-cab.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: top;
+    height: 181px;
+    position: relative;
+    @extend %flex-display;
+    @extend %flex-align-items;
+    .cab-caption{
+      color:#fff;
+      border-left: 0px;
+      h3{
+        font-size:32px;
+        width:100%;
+        font-weight: 100;
+        margin-top: 15px;
+        letter-spacing: 3px;
+        color:#fff;
+        text-align: center;
+        position: static;
+        strong{
+          font-weight:600;
+          color: #fff;
+        }
+        &:before{
+          content:none;
+          display: none;
+        }
+      }
+
+      h5{
+        font-size: 17px;
+        letter-spacing: 2px;
+        text-align: center;
+        font-weight: 200;
+        margin: 15px 0px 0px 0px;
+        strong{
+          font-weight:600;
+        }
+      }
+      &.white{
+        h3,h5{
+          color: $color-main;
+          strong{
+            color:$color-main;
+          }
+        }
+        h3{
+          font-weight: 100;
+          font-size: 34px;
+          margin-bottom: 25px;
+          strong{
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.cab-empresa{
+  height: 440px;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .cab-caption{
+    h3{
+      font-size: 47px;
+    }
+  }
+  @include mq($desktop){
+    background-position: 0px -139px;
+  };
+
+}

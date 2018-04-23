@@ -1,0 +1,52 @@
+.crumbs{
+  &.empresa{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    .container{
+      background: rgba(255, 255, 255, 0.9);
+    }
+  }
+  display: block;
+  width: 100%;
+  background:transparent;
+  .container{
+    @extend %flex-display;
+    @extend %flex-just-c;
+    @extend %flex-align-items;
+    width: 100%;
+    background: $grey-l2;
+  }
+  p{
+    span{
+      color:$grey-d2;
+      letter-spacing: 1px;
+      margin: 0px 20px;
+      i{
+        font-size: 10px;
+        color:$color-third;
+      }
+    }
+  }
+  a{
+    color:$color-third;
+    letter-spacing: 1px;
+    &:last-of-type{
+      color:$color-main;
+    }
+  }
+  @media screen and (max-width:606px){
+    overflow-x: auto;
+    padding-left: 20px;
+    .container{
+      width: 200%;
+    }
+  }
+}
+
+.pattern-crumbs{
+  background-image: imgpath('comun','pattern-crumbs.png');
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 15px;
+}

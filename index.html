@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    body{
+      font-family: sans-serif;
+    }
+  </style>
+  <body>
+    <p><i>HAGA SU RESERVA RELLENANDO EL SIGUIENTE FORMULARIO</i></p>
+
+    <form class="" action="index.html" method="post">
+      <input class="resField" id="nom" type="text" placeholder="Nombre" name="nom">
+      <input class="resField" id="ape" type="text" placeholder="Apellidos" name="ape">
+      <input class="resField" id="ema" type="email" placeholder="Email" name="ema">
+      <input class="resField" id="tel" type="tel" placeholder="Teléfono" name="tel">
+      <input class="resField" id="dat" type="date" placeholder="Fecha" name="dat">
+      <input class="resField" id="com" type="number" placeholder="Comensales" name="com">
+      <input id="btValRes" type="submit" value="Enviar">
+    </form>
+
+    <div id="servMessg"></div>
+
+    <footer></footer>
+    <script src="assets/js/reserva/model.js"></script>
+    <script src="assets/js/reserva/view.js"></script>
+    <script src="assets/js/reserva/controller.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+.bnr-h{
+  overflow: hidden;
+}
+
+
+.bnr-h__info{
+  position: relative;
+  z-index: 2;
+  padding: 20px!important;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  min-height: 220px;
+  max-height: 220px;
+
+  &.second{
+    background: $color-second;
+  }
+
+  &.main{
+    background: $color-main;
+  }
+
+
+  &.third{
+    background:darken($color-main,5%);
+  }
+
+
+  &.grey{
+    background:$grey;
+  }
+
+
+
+  h3{
+    font-size: 19px;
+    margin-top: 0px;
+    font-family: $font-corp;
+    color: $color-main;
+    letter-spacing: 1px;
+    font-weight: 300;
+    strong{
+      font-weight: 500;
+    }
+  }
+  p{
+    font-weight: 300;
+  }
+}
+
+
+.bnr-h__img{
+  position: relative;
+  z-index: 1;
+
+  img{
+    @include prefixed(transition,.8s);
+    @include prefixed(transform,scale(1.1));
+    min-width: 320px;
+    max-width: 320px;
+  }
+  &:hover{
+    img{
+      @include prefixed(transform,scale(1.4));
+    }
+  }
+
+}

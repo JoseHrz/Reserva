@@ -1,0 +1,40 @@
+//Proyect variables / functions / mixins
+@import "config";
+
+//Base
+@import "base/normalize";
+@import "base/base";
+
+
+//Layout
+@import "layout/grid";
+@import "layout/helpers";
+
+//Modules
+@import "modules/nav";
+@import "modules/submenus";
+@import "modules/menu-mobile";
+@import "modules/sticky";
+@import "modules/buttons";
+@import "modules/parallax";
+@import "modules/bnr-card-hrz";
+@import "modules/bnr-card-vrt";
+@import "modules/bnr-block";
+@import "modules/crumbs";
+@import "modules/forms";
+@import "modules/accordion";
+@import "modules/slider";
+@import "modules/table-of-contents";
+@import "modules/product";
+
+//Components
+@import "components/cabs";
+@import "components/home";
+@import "components/noticias";
+@import "components/empresa";
+
+
+//Plugin
+// @import "../plugins/slickslider/animate.scss";
+// @import "../plugins/slickslider/slick-theme.scss";
+// @import "../plugins/slickslider/slick.scss";

@@ -1,0 +1,44 @@
+.stick{
+	position: fixed;
+	background: #fff;
+	z-index: 9999;
+	height: 70px;
+	box-shadow: $soft-shadow;
+	padding-bottom: 24px;
+	#logo{
+		width: 44%;
+		margin-top:25px;
+	}
+
+
+	.nav-container{
+
+		.nav{
+			.actions{
+				.menu-actions{
+					&__link{
+						span{
+							&:after{
+								top:0px;
+							}
+						}
+					}
+				}
+			}
+
+
+			.sections{
+				.menu{
+					.submenu-trigg{
+						&:after{
+							bottom:-19px;
+						}
+					}
+				}
+			}
+
+
+
+		}
+	}
+}

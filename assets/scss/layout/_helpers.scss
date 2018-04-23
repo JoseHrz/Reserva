@@ -1,0 +1,172 @@
+//1.TYPOGRAPHIC HELPERS
+//===============================================
+
+//Aligns
+$aligns:(
+right:'right',
+left:'left',
+center:'center'
+);
+
+@each $align,$direction in $aligns{
+  .#{$align}-align{
+    text-align: unquote($direction)!important;
+  }
+}
+
+//Weights
+$weights:(
+bold:800,
+semi:600,
+regular:400,
+normal:300,
+light:200
+);
+
+@each $style,$weight in $weights{
+  .#{$style}{
+    font-weight: $weight;
+  }
+}
+
+
+
+.upcase{
+  text-transform: uppercase!important;
+}
+
+.font-second{
+  font-family: $font-corp;
+}
+
+
+//2.COLORS
+//===============================================
+
+.c-corp{
+  color:$color-main!important;
+}
+
+.c-corp-l{
+  color:$color-main!important;
+}
+
+.c-second{
+  color:$color-second!important;
+}
+
+.c-second-l{
+  color:$color-main!important;
+}
+
+.c-third{
+  color:$color-third!important;
+}
+
+.c-white{
+  color: #fff!important;
+}
+
+
+.bg-c-corp{
+  background:$color-main!important;
+}
+
+
+.bg-c-second{
+  background:$color-second!important;
+}
+
+.bg-white{
+  background:#fff;
+}
+
+.bg-grey{
+  background: $grey;
+}
+
+.bg-grey-l1{
+  background: $grey-l1;
+}
+
+.bg-grey-l2{
+  background: $grey-l2;
+}
+
+.bg-grey-d1{
+  background: $grey-d1;
+}
+
+.bg-grey-d2{
+  background: $grey-d2;
+}
+
+
+//3. ELEMENTS POSITIO-SIZE
+//===============================================
+
+.center-block{
+  display: block;
+  margin: 0px auto;
+}
+
+
+.responsive-img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.bordered{
+  border: solid 1px #ddd;
+  box-sizing: border-box;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+
+.no-padd{
+  padding: 0!important;
+}
+
+.no-mar{
+  margin: 0!important;
+}
+
+.left{
+  float: left;
+}
+
+
+.right{
+  float: right;
+}
+
+
+
+//5. VISUAL STYLES
+//==================================================
+
+.soft-shadow{
+  @include prefixed(box-shadow,$soft-shadow);
+  box-shadow: $soft-shadow;
+}
+
+.blur-shadow{
+  box-shadow: $blur-shadow;
+}
+
+
+
+.separate{
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 1px;
+    background: #eee;
+  }
+}
